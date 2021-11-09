@@ -1,0 +1,257 @@
+.main-page-btn {
+    background-color: #4f39ce !important;
+    border-color: #4f39ce !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Logo CSS */
+.logo {
+    position: fixed;
+    top: 2%;
+    left: 2%;
+
+    width: 3%;
+    height: 5.5%;
+
+    border-radius: 50%;
+}
+
+/* MainPage CSS */
+#main-page-background {
+    height: 100vh;
+    background-image: url('./images/skyline-background.jpg');
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#main-page-background * {
+    margin: 1rem
+}
+
+#main-page-description {
+    width: 60%;
+
+    padding: 1.6%;
+
+    background-color: white;
+    border: solid 0.15rem #4f39ce;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.main-page-header {
+    color: white;
+    font-family: Impact, fantasy;
+    text-shadow: 2px 2px #4b4b4b;
+}
+
+/* EndPage CSS */
+#end-page-background {
+    height: 100vh;
+    background-image: url('./images/end-background.jpg');
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#end-page-header {
+    color: white;
+    font-family: Impact, fantasy;
+}
+
+#final-stats-container {
+    margin-top: 2%;
+
+    background-color: white;
+    padding: 2rem;
+    border: solid 0.15rem #4f39ce;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#final-stats-container * {
+    margin-top: '5%';
+    margin-bottom: '5%';
+}
+
+#ending-score-image {
+    margin-top: 2%;
+
+    min-width: 30%;
+    max-width: 30%;
+    min-height: 30%;
+    max-height: 30%;
+}
+
+/* GuessingPage CSS */
+#guessing-page-background {
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url('./images/question-background.png');
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.guessing-page-header {
+    color: white;
+    font-family: Impact, fantasy;
+    text-shadow: 2px 2px #4b4b4b;
+}
+
+
+#stats-box {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+
+    background-color: white;
+    padding: 2rem;
+    border: solid 0.15rem #4f39ce;
+    border-radius: 20%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#hint-container {
+    position: fixed;
+    top: 5%;
+    right: 2%;
+    width: 20%;
+    max-width: 20%;
+
+    background-color: white;
+    padding: 2rem;
+    border: solid 0.15rem #4f39ce;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#main-section {
+    width: 70%;
+    min-height: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.guessing-area {
+    min-width: 100%;
+    min-height: 90vh;
+    max-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#skyline-image {
+    min-width: 70%;
+    max-width: 70%;
+    min-height: 70%;
+    max-height: 70%;
+}
+
+#guessing-form {
+    margin-top: 3%;
+    width: 60%;
+
+    display: flex;
+}
+
+.guessing-page-btn {
+    background-color: #4f39ce !important;
+    border-color: #4f39ce !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#right-or-wrong {
+    position: fixed;
+    top: 50%;
+    left: 5%;
+
+    max-width: 15%;
+
+    background-color: white;
+    padding: 2rem;
+    border: solid 0.15rem #4f39ce;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#yes-or-no-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form CSS */
+.form-control {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.form-page-background {
+    height: 100vh;
+    background-image: url('./images/skyline-background-2.jpg');
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.city-form {
+    width: 50%;
+    background-color: white;
+    padding: 1rem;
+    border: solid 0.15rem #eb7843;
+}
+
+.city-form * {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.form-title {
+    position: fixed;
+    top: 10%;
+
+    margin-bottom: 2%;
+
+    color: white;
+    font-family: Impact, fantasy;
+    text-shadow: 2px 2px #4b4b4b;
+}
+
+.form-btn {
+    background-color: #747296 !important;
+    border-color: #747296 !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* DeleteCityForm CSS */
+#delete-city-dropdown {
+    margin-bottom: 10%;
+
+    background-color: #747296 !important;
+    border-color: #747296 !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* UpdateCityForm CSS */
+#update-city-dropdown {
+    margin-bottom: 20%;
+
+    background-color: #747296 !important;
+    border-color: #747296 !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
