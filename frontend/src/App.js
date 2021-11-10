@@ -24,61 +24,11 @@ function App() {
     dispatch(getCities());
   }, [dispatch]);
 
-  
-
-
-  /*
-  const importAll = (r) => {
-    let audio = {};
-    r.keys().map( (item, index) => { audio[item.replace('./', '')] = r(item); } );
-    return audio;
-  }
-
-  const convertToArray = (audioFiles) => {
-    let songs = []
-    for (let song in audioFiles)
-      songs.push({
-        audio: audioFiles[song].default,
-        name: song.substring(0, song.length - 4)
-      })
-    //console.log(songs)
-    return songs
-  }
-
-  //const audioList = convertToArray(importAll(require.context('./audio', true, /\.(mp3)$/)));
-  //const audioList = [{audio: demoAudio, name: 'Eastside'}]
-  
-
-  const convertToArray = (imageFiles) => {
-    let cities = []
-    for (let city in imageFiles)
-      cities.push({
-        image: imageFiles[city].default,
-        name: city.substring(0, city.length - 4)
-      })
-    //console.log(songs)
-    return cities;
-  }
-
-  const importAll = (r) => {
-    let image = {};
-    r.keys().map( (item, index) => { image[item.replace('./', '')] = r(item); } );
-    return image;
-  }
-  */
-
   const updateScore = (val) => {
     console.log(val)
     setScore(val);
   }
 
-  /*
-  const updateQuizList = (param) => {
-    
-  }
-  */
-
-  //const quizList = convertToArray(importAll(require.context('./cities', true, /\.(png|jpe?g|svg)$/)))
   const quizList = useSelector((state) => state.cities);
   console.log("RERENDERED APP");
 

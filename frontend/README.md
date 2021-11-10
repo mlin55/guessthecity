@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# Guess the City
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Guess the City is a fullstack web application that tests the user's knowledge of city skylines in the form of a fun and interactive quiz.
 
-## Available Scripts
+## How it Works
 
-In the project directory, you can run:
+When it loads, the app pulls images of city skylines from the database and loads them into quiz format. Upon starting the quiz, the user is shown skyline images one at a time and must input their best guess as to what city is being shown. Throughout the quiz, statistics on their performance are compiled and used to determine their final score at the conclusion. Additionally, the app also supports CRUD (Create, Read, Update, Delete) functionality for all cities in the database, which can be accessed through the main menu.
 
-### `npm start`
+## Tools Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![MERN stack architecture diagram](/architecture_diagram.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To build this application, I used the MERN stack: more specifically, React for the frontend, Node.js and Express on the backend, and MongoDB as the database. Additional libraries and frameworks used were Redux to centralize the application's state globally, Mongoose to handle connections to the database asynchronously and model MongoDB objects, and Bootstrap for responsive buttons, dropdowns, alerts, and icons.
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project is currently being hosted with Heroku for the backend and Netlify for the frontend. To try it out, just navigate to this [link](https://guess-the-city.netlify.app/) in your browser and you're all set! To host Guess the City on your local machine, clone into the repository and use the command: *nodemon index.js* to start the server, and the command: *npm start* to start the client.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contributing
+Pull requests are always welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

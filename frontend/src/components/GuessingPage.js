@@ -28,34 +28,11 @@ function GuessingPage({cityList, updateScore, quizLength, setNumCorrect}) {
     useEffect(() => {
         if (state.index == quizLength && !state.finishedQuiz)
         {
-            //console.log((state.correctGuesses / state.citiesSeen * 100).toFixed(2));
             updateScore((state.correctGuesses / state.citiesSeen * 100).toFixed(2));
             setState(prevState => ({ ...prevState, gaveAnswer: false, userInput: '', userSubmit: '', finishedQuiz: true}));
             setNumCorrect(state.correctGuesses);
         }
     });
-    /*
-    const playSong = (song) => {
-        let audio = new Audio();
-        audio.src = song;
-
-        //wait 100 ms to avoid non-finite error
-        setTimeout(() => {
-            audio.volume = 0.05;
-            audio.currentTime = Math.random() * (audio.duration - 5);
-            audio.play();
-        }, 100);
-        //can only hear song once
-        setState(prevState => ({ ...prevState, canClickPlay: false}));
-
-        //stop playing after 5 seconds
-        setTimeout(() => {
-            audio.pause();
-            setState(prevState => ({ ...prevState, canSubmit: true}));
-        },
-        5000);
-    }
-    */
 
 
     const handleChange = (event) => {
@@ -64,29 +41,48 @@ function GuessingPage({cityList, updateScore, quizLength, setNumCorrect}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        //console.log(state.userInput);
         setState(prevState => ({...prevState, userSubmit: state.userInput, gaveAnswer: true}));
+        evaluateAnswer(state.userInput, cityList[state.index].name);
+    }
+
+    const evaluateAnswer = (given, answer) => {
+        let expected = formatString(answer);
+        let actual = formatString(given);
+        updateStats(expected == actual);
+    }
+
+    const formatString = (str) => {
+        str.toLowerCase();
+        let formatted = "";
+        for (let i = 0; i < str.length; i++) {
+            if (str[i].localeCompare('a') >= 0 && str[i].localeCompare('z') <= 0) {
+                formatted += str[i];
+            }
+        }
+        console.log(formatted);
+        return formatted;
     }
 
     const updateStats = (guessedRight) => {
         if (guessedRight) {
             setState(prevState => ({...prevState, correctGuesses: state.correctGuesses + 1, citiesSeen: state.citiesSeen + 1}));
-            setHint1(false);
-            setHint2(false);
         }
         else {
             setState(prevState => ({...prevState, incorrectGuesses: state.incorrectGuesses + 1, citiesSeen: state.citiesSeen + 1}));
-            setHint1(false);
-            setHint2(false);
         }
-
-        nextSong();
     }
 
-    const nextSong = () => {
+    const nextCity = () => {
         setState(prevState => ({ ...prevState, gaveAnswer: false, userInput: '', userSubmit: ''}));
         if (state.index < quizLength)
             setState(prevState => ({...prevState, index: state.index + 1}));
+        setHint1(false);
+        setHint2(false);
+    }
+
+    const override = () => {
+        setState(prevState => ({...prevState, correctGuesses: state.correctGuesses + 1, incorrectGuesses: state.incorrectGuesses - 1}));
+        nextCity();
     }
 
     return (
@@ -124,6 +120,9 @@ function GuessingPage({cityList, updateScore, quizLength, setNumCorrect}) {
                   }
                 </div>
               }
+              {state.gaveAnswer && 
+                  <Button className = 'guessing-page-btn' onClick={() => nextCity()}>Next question</Button>
+              }
               {state.finishedQuiz &&
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                   <h2 style={{color: 'white'}}>That's all the questions!</h2>
@@ -139,10 +138,9 @@ function GuessingPage({cityList, updateScore, quizLength, setNumCorrect}) {
                 <h3 style={{marginBottom: '17%'}}>{cityList[state.index].name}</h3>
                 <h3>Your answer: </h3>
                 <h3 style={{marginBottom: '17%'}}>{state.userSubmit}</h3>
-                <h4 style={{marginBottom: '17%'}}>Were you correct?</h4>
+                <h4 style={{marginBottom: '17%'}}>{formatString(cityList[state.index].name) == formatString(state.userSubmit) ? "That's correct!" : "Sorry, incorrect."}</h4>
                 <span id="yes-or-no-container">
-                  <Button onClick={() => updateStats(true)} className = 'guessing-page-btn' style={{marginLeft: 'auto', marginRight: 'auto'}}>Yes</Button>
-                  <Button onClick={() => updateStats(false)} className = 'guessing-page-btn' style={{marginLeft: 'auto', marginRight: 'auto'}}>No</Button>
+                  <Button onClick={override} className = 'guessing-page-btn' style={{marginLeft: 'auto', marginRight: 'auto'}}>Override: I was right</Button>
                 </span>
               </div>
           }
