@@ -47,7 +47,7 @@ function EndPage({numCorrect, quizLength}) {
               <h4>Number of correct guesses: {numCorrect}</h4>
               <h4>Number of incorrect guesses: {quizLength - numCorrect}</h4>
               <h4>Accuracy: {(numCorrect / quizLength * 100).toFixed(2) + "%"}</h4>
-              <h4>Final Score: {accuracy * 4.86}</h4>
+              <h4>Final Score: {(accuracy * 4.86).toFixed(0)}</h4>
             </div>
             <img id='ending-score-image' src={generateScoreImage(accuracy)}></img>
             <h2 style={{color: 'white', marginTop: '2%', marginBottom: '1.5%'}}>{generateScoreMessage(accuracy)}</h2>

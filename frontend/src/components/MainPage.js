@@ -22,7 +22,7 @@ function MainPage({cityList, setQuizLength, quizLength}) {
         }
         else if (length <= 0) {
             setWarning("The quiz must have at least one round!");
-        } else if (length >= cityList.length) {
+        } else if (length > cityList.length) {
             setWarning("The quiz cannot have more than " + cityList.length + " rounds!");
         }
         else {
